@@ -1,0 +1,57 @@
+{% extends "Base.html" %}
+{% block title %} LogIn {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block navbar %} {{ super() }} {% endblock %}
+{% block content %}
+
+    <div class="container form-group">
+        <h1>Log In</h1>
+        <p>Please enter your Username and Password to log into your Manchester United account.</p>
+        <hr>
+        <form id="login" name="login" action="/login" method="POST">
+            {{ form.csrf_token }}
+            <div class="form">
+
+                <div class="form-field"> {{ form.Username.label }} {{ form.Username(id='username') }}
+                    {% if form.Username.errors %}
+                        <ul class="errors">
+                            {% for error in form.Username.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <div class="form-field">{{ form.Password.label }} {{ form.Password(id='password') }}
+                    {% if form.Password.errors %}
+                        <ul class="errors">
+                            {% for error in form.Password.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul class="errors">
+                                {% for message in get_flashed_messages() %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+
+
+            <div class="clearfix">
+                <button type="submit" class="login">Submit</button>
+            </div>
+
+        </form>
+
+        <p><br>If you do not already have an account you can <a href="/signup">sign up.</a></p>
+
+    </div>
+{% endblock %}
+{% block footer %} {{ super() }} {% endblock %}

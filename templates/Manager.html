@@ -1,0 +1,63 @@
+{% extends "Base.html" %}
+{% block title %} Manager profiles{% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block navbar %} {{ super() }} {% endblock %}
+{% block content %}
+    <h3 align="center">Manager Profiles:</h3><br>
+
+    <h4><strong>HEAD MANAGER</strong></h4>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><strong>OLE GUNAR SOLSKJAER</strong></div>
+                    <div class="panel-body"><img src="{{ url_for('static', filename ='/ole.jpeg') }}"
+                                                 class="img-responsive" style="width:100%" alt="Ole Gunnar Solskjaer">
+                    </div>
+                    <div class="panel-footer">
+                        <strong>United appointment:</strong> 26/12/2018 <br>
+                        <strong>Date of birth: </strong> 03/09/1973 <br>
+                        <strong>Nationality: </strong> Norwegian <br>
+                        <strong>Matches: </strong> 81 <br>
+                        <strong>Wins: </strong> 60
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+    <h4><strong>ASSISTANT MANAGERS</strong></h4>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><strong>MICHAEL CARRICK (Performance coach)</strong></div>
+                    <div class="panel-body"><img src="{{ url_for('static', filename ='/carrick.jpeg') }}"
+                                                 class="img-responsive" style="width:100%" alt="Michael Carrick"></div>
+                    <div class="panel-footer">
+                        <strong>United Appointment:</strong> 29/07/2008 <br>
+                        <strong>Date of birth: </strong> 03/09/1979 <br>
+                        <strong>Nationality: </strong> English <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><strong>MICHAEL PHELAN (Assistant coach)</strong></div>
+                    <div class="panel-body"><img src="{{ url_for('static', filename ='/phelan.jpg') }}" height="182px"
+                                                 class="img-responsive" style="width:100%" alt="Michael Phelan"></div>
+                    <div class="panel-footer">
+                        <strong>United debut:</strong> 26/09/2011 <br>
+                        <strong>Date of birth: </strong> 03/12/1974 <br>
+                        <strong>Nationality: </strong> English <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+{% endblock %}
+{% block footer %} {{ super() }} {% endblock %}

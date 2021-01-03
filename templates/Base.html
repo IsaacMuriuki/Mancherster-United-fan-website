@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> {% block head %}
+    <title> {% block title %}
+        Manchester United Fan Page{% endblock %}
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="static/website.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='/CSS.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename ='/website.js') }}"></script>
+{% endblock %}
+</head>
+<body>
+{% block navbar %}
+    <nav class="navbar navbar-expand-md navbar-light bg-danger text-white">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="/">
+                <img src="http://pngimg.com/uploads/manchester_united/manchester_united_PNG26.png" height="40"
+                     alt="Manchester United logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <div class="navbar-nav mr-auto">
+
+                    <a class="nav-item nav-link" href="/">Home</a>
+
+                    <a class="nav-item nav-link" href="/silverware">Silverware and Trophies</a>
+
+                    <a class="nav-item nav-link" href="/player">Player profiles</a>
+
+                    <a class="nav-item nav-link" href="/manager">Manager profiles</a>
+
+                </div>
+            </div>
+            <div class="nav-bar nav" align="right">
+                {% if username %}
+                    <a class="nav-item nav-link" href="/logout">LogOut</a>
+                {% else %}
+                    <a class="nav-item nav-link" href="/signup">SignUp</a>
+                    <a class="nav-item nav-link" href="/login">LogIn</a>
+                {% endif %}
+            </div>
+        </div>
+
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid bg-12 text-center">
+        <h3 class="">A bit about Manchester United:</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{ url_for('static', filename ='/Firstteam.jpg') }}" class="img-responsive" style="width:90%"
+                     alt="The first Manchester United team">
+                <p>Manchester United was formed in 1878 as Newton Heath LYR Football Club by the Carriage and Wagon department
+                of the Lancashire and Yorkshire Railway (LYR) depot at Newton Heath. On April of 1902 Manchester United
+                was born, under Ernest Mangall, who assumed managerial duties. Above is the first Manchester United team
+                pictured.
+                </p>
+            </div>
+            <br>
+
+            <div class="col-md-12">
+                <img src="{{ url_for('static', filename ='/OT.jpg') }}" class="img-responsive" style="width:90%"
+                     alt="Old Trafford">
+                <p>Old Trafford is a football stadium in Old Trafford, Greater Manchester, England, and the home of Manchester
+                United. With a capacity of 74,879, it is the largest club football stadium in the United Kingdom.
+                Nicknamed "The Theatre of Dreams" by Bobby Charlton, Old Trafford has been United's home ground since 1910.
+                </p>
+            </div>
+            <br>
+
+            <div class="col-md-12">
+                <img src="{{ url_for('static', filename ='/celebrate.jpg') }}" class="img-responsive" style="width:90%"
+                     alt="Manchester
+      United team and manager Sir Alex Fergerson lift the 2013 Premier League trophy">
+                <p>Manchester United are one of the most successful clubs in world football, with a glittering history
+                    of success on the field.
+                    Our 66 major trophy wins include a record 20 top-division titles and we were the first English club
+                    to win the European Cup in 1968.
+                    More details about our winning record can be found on the <a href="Silverware.html">Silverware
+                        page.</a>
+                </p>
+            </div>
+            <br>
+
+            <div class="col-md-12">
+                <img src="{{ url_for('static', filename ='/team.jpg') }}" class="img-responsive" style="width:90%"
+                     alt="Manchester United team photo">
+                <p>Above is the Manchester United team, with the coaches, pictured as of 2020. More information about
+                    the players
+                    on the <a href="Player.html">player profiles page</a> and more information about the manager and
+                    coaches on the
+                    <a href="Manager.html">manager profiles page.</a></p>
+            </div>
+        </div>
+    </div><br>
+
+{% endblock %}
+
+{% block footer %}
+    <!-- Footer -->
+    <div class="page-footer bg-danger">
+        <div class="text-center">
+            {% if username %}
+                <h3>Logged in as {{ username }}!</h3>
+            {% else %}
+                <h3>You are not logged in</h3>
+            {% endif %}
+        </div>
+        <!-- Footer Elements -->
+        <div class="container text-center">
+            <h2 class="h text-center">Our social medias:</h2>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/manchesterunited">
+                <i class="icon fa fa-facebook"></i>
+            </a>
+            <!-- Twitter -->
+            <a href="https://twitter.com/ManUtd">
+                <i class="icon fa fa-twitter"></i>
+            </a>
+            <!--Instagram-->
+            <a href="https://www.instagram.com/manchesterunited/">
+                <i class="icon fa fa-instagram"></i>
+            </a>
+            <!-- Youtube -->
+            <a href="https://www.youtube.com/manutd">
+                <i class="icon fa fa-youtube"></i>
+            </a>
+            <!-- Pinterest -->
+            <a href="https://www.pinterest.ca/manutd/">
+                <i class="icon fa fa-pinterest"></i>
+            </a>
+
+        </div>
+
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">Created by Isaac Muriuki
+        </div>
+        <!-- Copyright -->
+    </div>
+    </footer>
+{% endblock %}
+</body>
+</html>
+
+

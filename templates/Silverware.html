@@ -1,0 +1,60 @@
+
+
+{% extends "Base.html" %}
+{% block title %} Silverware and Trophies {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block navbar %} {{ super() }} {% endblock %}
+{% block content %}
+    <h3 align="center">Some of our wins in the biggest football competitions:</h3>
+
+    <table class="table table-bordered table-striped table-hover table-responsive-md">
+        <thead>
+        <tr>
+            <th>Competition</th>
+            <th>Grounds</th>
+            <th>Date played</th>
+            <th>Final score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="2">FA Cup</td>
+            <td>Old Trafford</td>
+            <td>23/06/2012</td>
+            <td>Manchester United 2 - 0 Arsenal</td>
+        </tr>
+        <tr>
+            <td>Stamford Bridge</td>
+            <td>15/03/2000</td>
+            <td>Chelsea 1 - 3 Manchester United</td>
+        </tr>
+        <tr>
+            <td>UEFA Champions League</td>
+            <td>Bernabeu</td>
+            <td>09/07/2019</td>
+            <td>Manchester United 2 - 1 Read Madrid</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Premier League</td>
+            <td>Etihad Stadium</td>
+            <td>09/07/2017</td>
+            <td>Manchester United 2 - 0 Manchester City</td>
+        </tr>
+        <tr>
+            <td>Anfield Stadium</td>
+            <td>20/09/2018</td>
+            <td>Liverpool 2 - 4 Manchester United</td>
+        </tr>
+        <tr>
+            <td>Old Trafford</td>
+            <td>08/07/2000</td>
+            <td>Manchester United 1 - 0 Leicester</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+{% endblock %}
+{% block footer %} {{ super() }} {% endblock %}
+

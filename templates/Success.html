@@ -1,0 +1,29 @@
+{% extends "Base.html" %}
+{% block title %} Successful SignUp {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block navbar %} {{ super() }} {% endblock %}
+{% block content %}
+
+    <div class="container">
+        <h1>Thank you for joining the Manchester United family !</h1>
+        <p>Here are your account details:
+        <hr>
+        </p>
+        <dl>
+            {% for key in form %}
+                {% if (key != "Password") and (key != "Password2") and (key != "csrf_token") %}
+
+                    <dt>{{ key }}</dt>
+                    <dd>{{ form[key] }}<br></dd>
+
+                {% endif %}
+            {% endfor %}
+        </dl>
+    <p style="padding: 20px">You can go to the Home Page <a href="/"> here</a></p>
+    <p style="padding: 20px">You can log into your account <a href="/login"> here</a></p>
+    </div>
+
+
+
+{% endblock %}
+{% block footer %} {{ super() }} {% endblock %}

@@ -1,0 +1,111 @@
+{% extends "Base.html" %}
+{% block title %} Player profiles {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block navbar %} {{ super() }} {% endblock %}
+{% block content %}
+<h3 align="center">Player Profiles:</h3><br>
+
+    <h4><strong>GOALKEEPERS</strong></h4> <hr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-danger">
+          <div class="panel-heading"><strong>DAVID DE GEA (Captain)</strong></div>
+        <div class="panel-body"><img src="{{url_for('static', filename ='/degea.jpg')}}" class="img-responsive" style="width:100%" alt="David De Gea"></div>
+        <div class="panel-footer">
+            <strong>United debut:</strong> 26/04/2011 <br>
+             <strong>Date of birth: </strong> 13/06/1990 <br>
+            <strong>Nationality: </strong> Spanish <br>
+            <strong>Appearances: </strong> 393 <br>
+            <strong>Clean sheets: </strong> 130
+        </div>
+      </div>
+    </div>
+
+      <div class="col-sm-6">
+      <div class="panel panel-danger">
+          <div class="panel-heading"><strong>SERGIO ROMERO</strong></div>
+        <div class="panel-body"><img src="{{url_for('static', filename ='/romero.jpg')}}" class="img-responsive" style="width:100%" alt="Sergio Romero"></div>
+        <div class="panel-footer">
+            <strong>United debut:</strong> 06/06/2015 <br>
+             <strong>Date of birth: </strong> 19/06/1992 <br>
+            <strong>Nationality: </strong> Argentinian <br>
+            <strong>Appearances: </strong> 180 <br>
+            <strong>Clean sheets: </strong> 50
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+    <h4><strong>DEFENDERS</strong></h4> <hr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-danger">
+          <div class="panel-heading"><strong>HARRY MAGUIRE</strong></div>
+        <div class="panel-body"><img src="{{url_for('static', filename ='/maguire.jpg')}}" class="img-responsive" style="width:100%" alt="Harry Maguire"></div>
+        <div class="panel-footer">
+            <strong>United debut:</strong> 26/05/2018 <br>
+             <strong>Date of birth: </strong> 03/09/1989 <br>
+            <strong>Nationality: </strong> English <br>
+            <strong>Appearances: </strong> 45 <br>
+            <strong>Clean sheets: </strong> 30
+        </div>
+      </div>
+    </div>
+
+      <div class="col-sm-6">
+      <div class="panel panel-danger">
+          <div class="panel-heading"><strong>ERIC BAILLY</strong></div>
+        <div class="panel-body"><img src="{{url_for('static', filename ='/bailly.jpg')}}" class="img-responsive" style="width:100%" alt="Eric Bailly"></div>
+        <div class="panel-footer">
+            <strong>United debut:</strong> 26/09/2016 <br>
+             <strong>Date of birth: </strong> 03/12/1987 <br>
+            <strong>Nationality: </strong> Ivory Coast <br>
+            <strong>Appearances: </strong> 89 <br>
+            <strong>Clean sheets: </strong> 56
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+    <h4><strong>MIDFIELDERS</strong></h4> <hr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-danger">
+          <div class="panel-heading"><strong>PAUL POGBA</strong></div>
+        <div class="panel-body"><img src="{{url_for('static', filename ='/pogba.jpg')}}" class="img-responsive" style="width:100%" alt="Paul Pogba"></div>
+        <div class="panel-footer">
+            <strong>United debut:</strong> 26/05/2015 <br>
+             <strong>Date of birth: </strong> 27/03/1988 <br>
+            <strong>Nationality: </strong> French <br>
+            <strong>Appearances: </strong> 150 <br>
+            <strong>Goals: </strong> 31 <br>
+            <strong>Assists: </strong> 45
+        </div>
+      </div>
+    </div>
+
+      <div class="col-sm-6">
+      <div class="panel panel-danger">
+          <div class="panel-heading"><strong>BRUNO FERNADEZ</strong></div>
+        <div class="panel-body"><img src="{{url_for('static', filename ='/bruno.jpg')}}" class="img-responsive" style="width:100%" alt="Bruno Ferandez"></div>
+        <div class="panel-footer">
+            <strong>United debut:</strong> 26/01/2020 <br>
+             <strong>Date of birth: </strong> 27/03/1994 <br>
+            <strong>Nationality: </strong> Portuguese <br>
+            <strong>Appearances: </strong> 4 <br>
+            <strong>Goals: </strong> 3 <br>
+            <strong>Assists: </strong> 2
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+
+{% endblock %}
+{% block footer %} {{ super() }} {% endblock %}

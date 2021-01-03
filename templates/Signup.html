@@ -1,0 +1,98 @@
+{% extends "Base.html" %}
+{% block title %} SignUp {% endblock %}
+{% block head %} {{ super() }} {% endblock %}
+{% block navbar %} {{ super() }} {% endblock %}
+{% block content %}
+
+    <div class="container form-group">
+        <h1>Sign Up</h1>
+        <p>Please fill up this form to create a Manchester United account.</p>
+        <hr>
+        <form id="signup" name="signup" action="/signup" method="post">
+            {{ form.csrf_token }}
+            <div class="form">
+
+                <div class="form-field">{{ form.First_Name.label() }} {{ form.First_Name(id="fname") }}
+                    {% if form.First_Name.errors %}
+                        <ul class="errors">
+                            {% for error in form.First_Name.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <div class="form-field">{{ form.Last_Name.label }} {{ form.Last_Name(id="lname") }}
+                    {% if form.Last_Name.errors %}
+                        <ul class="errors">
+                            {% for error in form.Last_Name.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <div class="form-field">{{ form.Username.label }} {{ form.Username(id='username') }}
+                    {% if form.Username.errors %}
+                        <ul class="errors">
+                            {% for error in form.Username.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul class="errors">
+                                {% for message in get_flashed_messages() %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+
+            </div>
+
+            <div class="form-field">{{ form.Email.label }} {{ form.Email(id="email") }}
+                {% if form.Email.errors %}
+                    <ul class="errors">
+                        {% for error in form.Email.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <div class="form-field">{{ form.Password.label }} {{ form.Password(id="password") }}
+                {% if form.Password.errors %}
+                    <ul class="errors">
+                        {% for error in form.Password.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <div class="form-field">{{ form.Password2.label }} {{ form.Password2(id="password2") }}
+                {% if form.Password2.errors %}
+                    <ul class="errors">
+                        {% for error in form.Password2.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <div class="errors" id="errors"></div>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </form>
+        <br>
+        <p>If you already have an account you can <a href="/login">log in.</a></p>
+
+    </div>
+{% endblock %}
+{% block footer %} {{ super() }} {% endblock %}
